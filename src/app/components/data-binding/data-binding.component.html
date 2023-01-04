@@ -1,0 +1,24 @@
+<div>
+    <span>{{screenTitle}}</span>
+    <input placeholder="username" (keyup)="enterUsername($event)" [(ngModel)]="userName">
+    <div [ngClass]="{'usernameMatch':userName == 'Raghu','usernameNotMatch':userName != 'Raghu'}">
+        {{userName}}
+    </div>
+
+    <div *ngFor="let emp of EmployeeList | filterPipe:userName;">
+        <span>{{emp.id}} - </span>
+        <span>{{emp.name | uppercase}}</span>
+    </div>
+
+    <app-custom-dropdown [employeeData]="EmployeeList"></app-custom-dropdown>
+
+    <nav mat-tab-nav-bar>
+        <a mat-tab-link *ngFor="let emp of EmployeeList;let index = index;" (click)="onSelectedTab(emp,index)">
+            {{emp.id}}
+        </a>
+    </nav>
+
+    <div>
+        <app-data-passing [dataInput]="EmployeeList[index].name"></app-data-passing>
+    </div>
+</div>

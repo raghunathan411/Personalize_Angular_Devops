@@ -1,0 +1,9 @@
+<div>
+    <div class="dropdownMain">
+        <input placeholder="Search..." [(ngModel)]="selectedItem">
+        <div *ngFor="let data of employeeData;">
+            <span>{{data.id}} - </span>
+            <span>{{data.name}}</span>
+        </div>
+    </div>
+</div>
