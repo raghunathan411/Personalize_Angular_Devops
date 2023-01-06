@@ -7,6 +7,6 @@ node{
         bat "npm install"
     }
     stage('Build'){
-        bat "npm run build --prod"
+        bat "ng build --prod"
     }
 }
