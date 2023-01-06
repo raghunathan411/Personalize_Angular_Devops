@@ -1,0 +1,12 @@
+node{
+    stage('Checkout SCM'){
+        git branch: 'DEV' , url: 'git@github.com:raghunathan411/Personalize_Angular_Devops.git' 
+    }
+
+    stage('Install node modules'){
+        sh "npm install"
+    }
+    stage('Build'){
+        sh "npm run build --prod"
+    }
+}
