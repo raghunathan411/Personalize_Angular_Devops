@@ -4,9 +4,9 @@ node{
     }
 
     stage('Install node modules'){
-        sh "npm install"
+        bat "npm install"
     }
     stage('Build'){
-        sh "npm run build --prod"
+        bat "npm run build --prod"
     }
 }
